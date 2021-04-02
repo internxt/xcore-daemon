@@ -1,11 +1,5 @@
 FROM debian:10
-RUN apt update && apt install -y make git gcc python3 python bash curl build-essential libssl-dev
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+RUN apt update && apt install -y make git gcc python3 python bash curl build-essential libssl-dev nodejs npm
 ENV STORJ_NETWORK=INXT
-ENV NVM_DIR /root/.nvm
-ENV NODE_VERSION 8.15
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
-ENV PATH      $NVM_DIR/versions/v$NODE_VERSION/bin:$PATH
-RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && git clone https://github.com/internxt/core-daemon && cd core-daemon && npm i && npm link
+RUN git clone https://github.com/internxt/core-daemon && cd core-daemon && npm i && npm link
 

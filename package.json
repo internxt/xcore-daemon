@@ -1,6 +1,6 @@
 {
   "name": "xcore-daemon",
-  "version": "5.3.1",
+  "version": "8.7.3-beta",
   "description": "daemon + process manager for sharing space on the internxt network",
   "main": "index.js",
   "bin": {

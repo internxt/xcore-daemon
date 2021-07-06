@@ -1,0 +1,5 @@
+FROM debian:10
+RUN apt update && apt install -y make git gcc python3 python bash curl build-essential libssl-dev nodejs npm
+ENV STORJ_NETWORK=INXT
+RUN git clone https://github.com/internxt/core-daemon && cd core-daemon && npm i && npm link
+
